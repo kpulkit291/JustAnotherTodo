@@ -1,0 +1,122 @@
+.add-todo, .todo-list {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding: 2px 2px 2px 2px;
+    border-bottom: 0.2px solid rgb(179, 177, 177);
+}
+
+.todo-list {
+    min-height: 40px;
+    height: auto;
+}
+
+.add-todo .icon {
+    flex-basis: 10%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 6px auto;
+}
+
+.add-todo .todo-area {
+    flex-basis: 90%;
+}
+
+.todo-area input {
+    outline: 0;
+    border: 0;
+    width: 80%;
+    height: 80%;
+}
+
+.todo-list .todo-check {
+    flex-basis: 10%;
+    text-align: center;
+}
+
+.todo-name > i {
+    float: right;
+    vertical-align: middle;
+    margin: 4px auto;
+    display: none;
+    cursor: pointer;
+    color: rgb(243, 96, 96);
+}
+
+.todo-name:hover > i {
+    display: block;
+}
+
+.todo-name > i::after {
+    float: none;
+}
+
+.todo-name > div::after {
+    float: none;
+}
+
+.todo-name > div {
+    float: left;
+}
+
+.todo-list .todo-name {
+    flex-basis: 90%;
+    padding: 2px 2px 2px 2px;
+}
+
+.cut-thru {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+    position: relative;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 22px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #aaa;
+    background: #FFF;
+    border-radius: .2em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
+    -webkit-transition: all .275s;
+    transition: all .275s;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '👍';
+    position: absolute;
+    top: 36px;
+    left: -6px;
+    color: rgb(76, 247, 76);
+    line-height: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-size: 18px;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+opacity: 0;
+-webkit-transform: scale(0) rotate(45deg);
+    transform: scale(0) rotate(45deg);
+}

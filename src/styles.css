@@ -1,0 +1,12 @@
+html {
+    font-size: 24px;
+    color: #4d4d4d;
+}
+
+.todo-container {
+    display: block;
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    border: 0.2px solid rgb(179, 177, 177);
+}
